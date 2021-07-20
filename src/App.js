@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import '@fontsource/roboto';
+import SearchAppBar from "./component/navbar";
+import WorldTable from "./table/world";
+import VietnamTable from "./table/vietnam";
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Router>
+    <SearchAppBar/>
+          <Route path="/world" component={{WorldTable}}/>
+          <Route path="/vietnam" component={VietnamTable}/>
+          <Route path="/" exact component={WorldTable}/>
+        </Router>
+      </>
   );
 }
 
