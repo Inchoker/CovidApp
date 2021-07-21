@@ -14,7 +14,7 @@ function App() {
       <>
         <Router>
     <SearchAppBar/>
-          <Route path="/world" component={{WorldTable}}/>
+          <Route path="/world" component={WorldTable}/>
           <Route path="/vietnam" component={VietnamTable}/>
           <Route path="/" exact component={WorldTable}/>
         </Router>

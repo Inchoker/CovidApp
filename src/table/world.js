@@ -23,8 +23,9 @@ export default function WorldTable(){
             tempObject.life=result[property].All.life_expectancy;
             tempRow.push(tempObject);
         }
-        setRow(tempRow)
-    });
+        console.log('use effect')
+       setRow(tempRow)
+    },[]);
     return (
         <BasicTable row={row}/>
     )

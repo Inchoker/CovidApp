@@ -19,7 +19,8 @@ const useStyles = makeStyles({
 export default function VietnamTable() {
     const classes = useStyles();
     const [rows, setRow] = useState([])
-    useEffect(async () => {
+    useEffect(() => {
+        async function fetchData(){
         let result = await axios(
             'https://covid-api.mmediagroup.fr/v1/vaccines?country=Vietnam',
         );
@@ -33,7 +34,9 @@ export default function VietnamTable() {
         const life_expectancy ={name: 'Life Expectancy', number:result.life_expectancy};
         tempRow.push(admininistered,people_vaccinated,people_partially_vaccinated,population,sq_km_area,life_expectancy)
         setRow(tempRow)
-    })
+        }
+        fetchData();
+    },[])
     return (
         <TableContainer component={Paper}>
             <Table className={classes.table} size="small" aria-label="a dense table">

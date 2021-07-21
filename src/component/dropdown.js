@@ -72,20 +72,22 @@ export default function CustomizedMenus() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
+                    <Link to={"/world"}>
                 <StyledMenuItem>
-                    <Link to={"/world"}></Link>
                     <ListItemIcon>
                         <PublicIcon fontSize="small" />
                     </ListItemIcon>
                     <ListItemText primary="World Overall" />
                 </StyledMenuItem>
+                    </Link>
+                    <Link to={"/vietnam"}>
                 <StyledMenuItem>
-                    <Link to={"/vietnam"}></Link>
                     <ListItemIcon>
                         <StarIcon fontSize="small" />
                     </ListItemIcon>
                     <ListItemText primary="Vietnam" />
                 </StyledMenuItem>
+                    </Link>
                 <StyledMenuItem>
                     <ListItemIcon>
                         <LanguageIcon fontSize="small" />
